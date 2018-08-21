@@ -114,7 +114,7 @@ def export_asset(image,z,v,threshold):
         task=ee.batch.Export.image.toAsset(
             image=image, 
             description=name, 
-            assetId='{}/{}/{}'.format(PROJECT_ROOT,name), 
+            assetId='{}/{}'.format(PROJECT_ROOT,name), 
             scale=Z_LEVELS[z], 
             crs=CRS, 
             region=geom.coordinates().getInfo(),
@@ -173,7 +173,7 @@ def zlevel_asset(v,z,threshold):
 # MAIN
 #
 def _inside(args):
-    img_i=HANSEN_THRESHOLDED_LOSS.select(['loss_{}'.format(threshold)])
+    img_i=HANSEN_THRESHOLDED_LOSS.select(['loss_{}'.format(args.threshold)])
     img_cat=TSC_DRIVERS.select(['class'])
     img_ly=TSC_DRIVERS.select(['lossyear'])
     run(img_i,img_cat,img_ly,int(args.max),int(args.min),args.version,args.threshold,lowest_to_asset=args.asset)
@@ -190,7 +190,7 @@ def _outside(args):
 
 
 def _zasset(args):
-    img_i=HANSEN_THRESHOLDED_LOSS.select(['loss_{}'.format(threshold)])
+    img_i=HANSEN_THRESHOLDED_LOSS.select(['loss_{}'.format(args.threshold)])
     img_cat=TSC_DRIVERS.select(['class'])
     img_ly=TSC_DRIVERS.select(['lossyear'])
     run_zasset(img_i,img_cat,img_ly,int(args.z_level),args.version,args.threshold)
