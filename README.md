@@ -47,6 +47,37 @@ optional arguments:
                         rce?docid=13BvM9v1Rzr90Ykf1bzPgbYvbb8kGSvwyqyDwO8NI)
   -v VERSION, --version VERSION
                         version
- ```
+```
 
+---
 
+#### NOTES
+
+```
+# copy from s3 to gcloud storage
+gsutil -m cp -R s3://whrc-v4-processed gs://wri-public/tsc_drivers/2018/global
+```
+
+--- 
+
+If there are failures:
+1. get missing files
+```
+# bash
+aws s3 ls whrc-v4-processed
+gsutil ls gs://wri-public/tsc_drivers/2018/global
+# python
+...
+aws_df[~aws_df.filename.isin(gs_df.filename)].to_csv('/Users/brook/WRI/code/TSC_Drivers/todo_files.csv',index=False)
+```
+
+2. Copy missing files
+```
+FILES=( 00N_010E_biomass.tif 00N_020E_biomass.tif 00N_030E_biomass.tif ... )
+
+for f in "${FILES[@]}"
+do
+    echo "AWS->S3: "$f
+    gsutil cp s3://whrc-v4-processed/${f} gs://wri-public/tsc_drivers/2018/global/${f}
+done
+```
