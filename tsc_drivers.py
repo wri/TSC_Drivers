@@ -1,14 +1,14 @@
-import ee, gee
+import ee
 import argparse
 import re
-gee.init()
+ee.Initialize()
 
 #
 # DATA
 #
-PROJECT_ROOT='projects/wri-datalab/TSC_DRIVERS/2017'
+PROJECT_ROOT='users/thailynnmunroe/TSC_update'
 TSC_DRIVERS_ID=PROJECT_ROOT+'/lossyear_classification'
-HANSEN_THRESHOLDED_LOSS_ID='projects/wri-datalab/umd/HANSEN_BINARY_LOSS_17'
+HANSEN_THRESHOLDED_LOSS_ID='users/thailynnmunroe/TSC_update/HANSEN_BINARY_LOSS_18'
 
 
 #
@@ -27,7 +27,7 @@ Z_LEVELS=[156000,78000,39000,20000,10000,4900,2400,1200,611,305,152,76,38,19]
 MAX_PIXS=65500
 FULL_INTENSITY=255
 BANDS=['intensity','class','lossyear']
-GCE_TILE_ROOT='lossyear_classification_map/2017/gfw'
+GCE_TILE_ROOT='lossyear_classification_map/2018/gfw'
 THRESHOLDS=[10,15,20,25,30,50,75]
 DEFAULT_GEOM_NAME='hansen_world'
 DEFAULT_VERSION=2
