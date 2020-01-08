@@ -2,8 +2,8 @@
 
 Adapted from the `category_alpha` branch of [hansen_ee_preprocessing](https://github.com/wri/hansen_ee_processing/tree/category_alpha).
 
-* The lossyears_classification asset was created with [this](https://code.earthengine.google.com/c30b00d98c28470560c796761959d17d).
-* The hansen_binary_loss asset was created with [this](https://code.earthengine.google.com/53c13b75e91f3e68d882c878c70a7360).
+* The lossyears_classification asset was created with [this](https://code.earthengine.google.com/3ca1351887985f08a0f8c6ac583647f6).
+* The hansen_binary_loss asset was created with [this](https://code.earthengine.google.com/983e954618d06ae9d375ce8376cf74af).
 
 ---
 <a name='htiles'></a>
