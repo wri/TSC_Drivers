@@ -1,0 +1,7 @@
+google-api-python-client
+pyCrypto
+earthengine-api
+tensorflow
+setuptools
+oauth2client
+git+https://github.com/wri/gee_toolbox@feature/python3

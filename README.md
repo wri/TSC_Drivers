@@ -81,3 +81,21 @@ do
     gsutil cp s3://whrc-v4-processed/${f} gs://wri-public/tsc_drivers/2018/global/${f}
 done
 ```
+
+## Installation
+
+First install requirements
+```
+pip install -r requirements.txt
+```
+
+Then verify your [Google account](https://www.earthdatascience.org/tutorials/intro-google-earth-engine-python-api/)
+```
+earthengine authenticate
+```
+
+If you work on a Mac and installed Python using Homebrew you might run into [SSL errors](https://stackoverflow.com/questions/44649449/brew-installation-of-python-3-6-1-ssl-certificate-verify-failed-certificate/44649450#44649450). In that case run the install_certifi.py script and retry:
+```
+python install_certifi.py
+```
+
